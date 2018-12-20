@@ -8,11 +8,12 @@ import { hot } from 'react-hot-loader';
  */
 import './theme/css-baseline';
 
+import Form from './components/Form/index.jsx';
+import Header from './components/Header/index.jsx';
 import Typography from './components/Typography';
-import Header from './components/Header';
-import Form from './components/Form';
 
 class App extends React.Component {
+
   onSubmit(email: string, pwd: string) {
     // API CALL NEEDED
   }
@@ -31,31 +32,42 @@ class App extends React.Component {
       >
         <Header />
 
-        <Typography
-          color="text"
-          align="center"
-          variant="main-title"
-          style={{
-            letterSpacing: '-0.24px'
-          }}
-        >
-          Connexion
-        </Typography>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          margin: 40
+        }}>
+          <Typography
+            color="text"
+            align="center"
+            variant="main-title"
+            style={{
+              letterSpacing: '-0.24px',
+              marginBottom: 17
+            }}
+          >
+            Connexion
+          </Typography>
 
-        <Typography
-          color="text"
-          align="center"
-          style={{
-            letterSpacing: '-0.24px'
-          }}
-        >
-          Merci d’utiliser l’adresse email et le mot de passe que vous avez indiqués lors de votre
-          inscription.
-        </Typography>
+          <Typography
+            color="text"
+            align="center"
+            style={{
+              letterSpacing: '-0.24px'
+            }}
+          >
+            Merci d’utiliser l’adresse email et le mot de passe que vous avez indiqués lors de votre
+            inscription.
+          </Typography>
+
+
+        </div>
 
         <Form
-          onSubmit={(email: string, pwd: string) => this.onSubmit(email, pwd)}
+          onSubmit={this.onSubmit}
         />
+
       </div>
     );
   }
