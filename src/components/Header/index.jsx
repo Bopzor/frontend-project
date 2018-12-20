@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { hot } from 'react-hot-loader';
+
 import Typography from '../Typography';
 
 const Header = () => {
@@ -19,4 +21,4 @@ const Header = () => {
   );
 }
 
-export default  Header;
+export default hot(module)(Header);
